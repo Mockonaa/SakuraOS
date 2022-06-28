@@ -54,6 +54,11 @@ void ST7789V_SEND_DATA_BUFFERED(uint16_t *buff, size_t buff_size);
   PD11  ------> FMC_A16/RS
   PD7   ------> FMC_NE1/CS
   PE1   ------> FMC_RESET
+
+  PE0   ------> LCD_LIGHT
+  PD6	------> LCD_EXTC
+  PC8	------> LCD_POW_EN
+  PB11	------> LCD_TE
   */
 
 #define FMC_RS_Pin GPIO_PIN_11
@@ -67,6 +72,12 @@ void ST7789V_SEND_DATA_BUFFERED(uint16_t *buff, size_t buff_size);
 
 #define LCD_Backlight_Pin GPIO_PIN_0
 #define LCD_Backlight_GPIO_Port GPIOE
+#define LCD_EXTC_Pin GPIO_PIN_6
+#define LCD_EXTC_GPIO_Port GPIOD
+#define LCD_PWR_Pin GPIO_PIN_8
+#define LCD_PWR_GPIO_Port GPIOC
+#define LCD_TE_Pin GPIO_PIN_11
+#define LCD_TE_GPIO_Port GPIOB
 
 
 
@@ -484,6 +495,15 @@ const unsigned char font1[] = {
 
 void ST7789V_enableBacklight();
 void ST7789V_disableBacklight();
+
+void ST7789V_enablePower();
+void ST7789V_disablePower();
+
+void ST7789V_enableExtendedControl();
+void ST7789V_disableExtendedControl();
+
+void ST7789V_enableTearing();
+void ST7789V_disableTearing();
 
 void ST7789V_writeRegister16(uint8_t r, uint16_t d);
 void ST7789V_writeRegister32(uint8_t r, uint32_t d);

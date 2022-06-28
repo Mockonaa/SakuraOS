@@ -53,6 +53,29 @@ void ST7789V_disableBacklight() {
 	HAL_GPIO_WritePin(LCD_Backlight_GPIO_Port, LCD_Backlight_Pin, GPIO_PIN_RESET);
 }
 
+void ST7789V_enablePower() {
+	HAL_GPIO_WritePin(LCD_PWR_GPIO_Port, LCD_PWR_Pin, GPIO_PIN_SET);
+}
+
+void ST7789V_disablePower() {
+	HAL_GPIO_WritePin(LCD_PWR_GPIO_Port, LCD_PWR_Pin, GPIO_PIN_RESET);
+}
+
+void ST7789V_enableExtendedControl() {
+	HAL_GPIO_WritePin(LCD_EXTC_GPIO_Port, LCD_EXTC_Pin, GPIO_PIN_SET);
+}
+
+void ST7789V_disableExtendedControl() {
+	HAL_GPIO_WritePin(LCD_EXTC_GPIO_Port, LCD_EXTC_Pin, GPIO_PIN_RESET);
+}
+
+void ST7789V_enableTearing() {
+	HAL_GPIO_WritePin(LCD_TE_GPIO_Port, LCD_TE_Pin, GPIO_PIN_SET);
+}
+
+void ST7789V_disableTearing() {
+	HAL_GPIO_WritePin(LCD_TE_GPIO_Port, LCD_TE_Pin, GPIO_PIN_RESET);
+}
 
 void ST7789V_writeRegister16(uint8_t r, uint16_t d) {
 	ST7789V_SEND_COMMAND(r);
