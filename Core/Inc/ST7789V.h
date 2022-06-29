@@ -502,9 +502,6 @@ void ST7789V_disablePower();
 void ST7789V_enableExtendedControl();
 void ST7789V_disableExtendedControl();
 
-void ST7789V_enableTearing();
-void ST7789V_disableTearing();
-
 void ST7789V_writeRegister16(uint8_t r, uint16_t d);
 void ST7789V_writeRegister32(uint8_t r, uint32_t d);
 
