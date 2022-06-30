@@ -78,6 +78,8 @@ void ST7789V_SEND_DATA_BUFFERED(uint16_t *buff, size_t buff_size);
 #define LCD_PWR_GPIO_Port GPIOC
 #define LCD_TE_Pin GPIO_PIN_11
 #define LCD_TE_GPIO_Port GPIOB
+#define LCD_RST_Pin GPIO_PIN_1
+#define LCD_RST_GPIO_Port GPIOE
 
 
 
@@ -502,6 +504,9 @@ void ST7789V_disablePower();
 void ST7789V_enableExtendedControl();
 void ST7789V_disableExtendedControl();
 
+void ST7789V_enableReset();
+void ST7789V_disableReset();
+
 void ST7789V_writeRegister16(uint8_t r, uint16_t d);
 void ST7789V_writeRegister32(uint8_t r, uint32_t d);
 
@@ -511,6 +516,7 @@ void ST7789V_setCursorPosition(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y
 void ST7789V_invertRows(uint16_t y0, uint16_t y1);
 
 void ST7789V_init(void);
+void ST7789V_init_v2(void);
 
 void ST7789V_drawPixel(uint16_t x, uint16_t y, uint16_t color);
 
